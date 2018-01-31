@@ -1,0 +1,27 @@
+service: sandbox-serverless-babel
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  hello:
+    handler: src/lib/handlers.hello
+    events:
+      - http:
+          method: get
+          path: hello
+          integration: lambda
+  bye:
+    handler: src/lib/handlers.bye
+    events:
+      - http:
+          method: get
+          path: bye
+          integration: lambda
