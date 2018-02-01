@@ -4,7 +4,14 @@ frameworkVersion: ">=1.1.0 <2.0.0"
 
 plugins:
   - serverless-webpack
+  - serverless-dynamodb-local
   - serverless-offline
+
+custom:
+  dynamodb:
+    start:
+      port: 8000
+      inMemory: true
 
 provider:
   name: aws
@@ -12,14 +19,14 @@ provider:
 
 functions:
   hello:
-    handler: src/lib/handlers.hello
+    handler: src/app/handlers.hello
     events:
       - http:
           method: get
           path: hello
           integration: lambda
   bye:
-    handler: src/lib/handlers.bye
+    handler: src/app/handlers.bye
     events:
       - http:
           method: get
