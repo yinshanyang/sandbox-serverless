@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "serverless offline start",
+    "invoke": "serverless invoke local --log --function",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -24,6 +26,7 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "flow-bin": "^0.64.0",
+    "serverless": "^1.26.0",
     "serverless-offline": "^3.16.0",
     "serverless-webpack": "^4.2.0",
     "webpack": "^3.10.0"
