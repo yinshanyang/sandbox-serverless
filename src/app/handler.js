@@ -1,13 +1,13 @@
 // @flow
 import { graphqlLambda } from 'graphql-server-lambda'
 import { makeExecutableSchema } from 'graphql-tools'
-import { mergeResolvers, mergeTypes } from 'merge-graplql-schemas'
+import { mergeResolvers, mergeTypes } from 'merge-graphql-schemas'
 
-import artistType from './data/type/artist'
-import songType from './data/type/song'
+import artistType from './data/types/artist'
+import songType from './data/types/song'
 
-import artistResolver from './data/resolver/artist'
-import songResolver from './data/resolver/song'
+import artistResolver from './data/resolvers/artist'
+import songResolver from './data/resolvers/song'
 
 const typeDefs = mergeTypes([ artistType, songType ])
 const resolvers = mergeResolvers([ artistResolver, songResolver ])

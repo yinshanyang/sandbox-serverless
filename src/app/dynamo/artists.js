@@ -9,8 +9,8 @@ export const getArtists = () =>
     TableName,
     AttributesToGet: [
       'id',
-      'first_name',
-      'last_name'
+      'firstName',
+      'lastName'
     ]
   })
 
@@ -21,31 +21,31 @@ export const getArtistById = (id: string): Promise<*> =>
   })
 
 export const createArtist = (args: {
-  first_name: string,
-  last_name: string
+  firstName: string,
+  lastName: string
 }): Promise<*> =>
   db.createItem({
     TableName,
     Item: {
       id: uuid(),
-      first_name: args.first_name,
-      last_name: args.last_name
+      firstName: args.firstName,
+      lastName: args.lastName
     }
   })
 
 export const updateArtist = (args: {
   id: string,
-  first_name: string,
-  last_name: string
+  firstName: string,
+  lastName: string
 }): Promise<*> =>
   db.updateItem({
     TableName,
     Key: { id: args.id },
     ExpressionAttributeValues: {
-      ':first_name': args.first_name,
-      ':last_name': args.last_name
+      ':firstName': args.firstName,
+      ':lastName': args.lastName
     },
-    UpdateExpression: 'SET first_name = :first_name, last_name = :last_name',
+    UpdateExpression: 'SET firstName = :firstName, lastName = :lastName',
     ReturnValues: 'ALL_NEW'
   }, args)
 

@@ -22,10 +22,10 @@ export const getSongById = (id: string): Promise<*> =>
   })
 
 export const getSongsByArtist = (artistId: string): Promise<*> =>
-  db.scan({
+  db.listItems({
     TableName,
-    FilterExpression: 'artist = :artist_id',
-    ExpressionAttributeValues: { 'artist_id': artistId }
+    FilterExpression: 'artist = :artistId',
+    ExpressionAttributeValues: { ':artistId': artistId }
   })
 
 export const createSong = (args: {
@@ -57,7 +57,7 @@ export const updateSong = (args: {
       ':artist': args.artist,
       ':duration': args.duration
     },
-    UpdateExpression: 'SET title = :title, artist = :artist, #song_duration = :duration',
+    UpdateExpression: 'SET title = :title, artist = :artist, duration = :duration',
     ReturnValues: 'ALL_NEW'
   }, args)
 

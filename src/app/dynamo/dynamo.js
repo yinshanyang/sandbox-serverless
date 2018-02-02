@@ -7,6 +7,7 @@ if (process.env.IS_OFFLINE) {
     endpoint: 'http://localhost:8000'
   }
 }
+
 const client = new AWS.DynamoDB.DocumentClient(options)
 
 export const listItems = (params) =>

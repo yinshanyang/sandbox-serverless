@@ -1,5 +1,5 @@
-import dbArtists from '../../dynamo/artists'
-import dbSongs from '../../dynamo/songs'
+import * as dbArtists from '../../dynamo/artists'
+import * as dbSongs from '../../dynamo/songs'
 
 export default {
   Query: {

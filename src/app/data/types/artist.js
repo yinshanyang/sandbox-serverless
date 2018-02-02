@@ -1,8 +1,8 @@
 export default `
   type Artist {
     id: ID!
-    first_name: String,
-    last_name: String,
+    firstName: String,
+    lastName: String,
     songs: [Song]
   }
 
@@ -15,13 +15,13 @@ export default `
 
   type Mutation {
     createArtist(
-      first_name: String!
-      last_name: String!
+      firstName: String!
+      lastName: String!
     ): Artist
     updateArtist(
       id: ID!
-      first_name: String!
-      last_name: String!
+      firstName: String!
+      lastName: String!
     ): Artist
     deleteArtist(
       id: ID!

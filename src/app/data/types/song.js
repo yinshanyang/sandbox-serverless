@@ -20,7 +20,7 @@ export default `
       duration: Int!
     ): Song
     updateSong(
-      id: ID@
+      id: ID!
       title: String
       artist: String
       duration: Int
